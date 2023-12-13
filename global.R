@@ -7,6 +7,7 @@ library(sf)
 # library(shinyjs)
 library(bslib)
 library(echarts4r)
+library(psrcplot)
 
 
 # run all files in the modules sub-directory
