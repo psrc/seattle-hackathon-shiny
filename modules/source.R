@@ -1,3 +1,5 @@
+# This module displays a card containing images/hyperlink to data sources
+
 source_ui <- function(id) {
   ns <- NS(id) 
   

@@ -2,10 +2,11 @@ library(shiny)
 library(tidyverse)
 # library(DBI)
 # library(odbc)
-# library(leaflet)
-# library(sf)
+library(leaflet)
+library(sf)
 # library(shinyjs)
 library(bslib)
+library(echarts4r)
 
 
 # run all files in the modules sub-directory
