@@ -9,8 +9,7 @@ server <- function(input, output, session) {
   })
   
   output$table <- renderDT({
-    d <- data() %>% 
-      select(-geometry)
+    d <- data()
     
     datatable(d)
   })
@@ -31,6 +30,7 @@ server <- function(input, output, session) {
   output$map <- renderLeaflet({
     m <- permit_22_23_map %>% 
       filter(housingunitgrp == input$unit_group)
+    
     create_map(lyr = m, 
                lyr_data_field = rse_index$COMPOSITE_SCORE, 
                legend_title = 'Racial Social Equity Index', 
