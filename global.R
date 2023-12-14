@@ -8,6 +8,8 @@ library(sf)
 library(bslib)
 library(echarts4r)
 library(psrcplot)
+library(DT)
+library(RSocrata)
 
 
 # run all files in the modules sub-directory
