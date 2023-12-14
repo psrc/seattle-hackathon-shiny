@@ -2,11 +2,14 @@ server <- function(input, output, session) {
   
   # mainpanel_server('dummy01',
   #                  housing_unit_group = input$unit_group)
-  
+
+  data <- reactive({
+    permit_22_23 %>% 
+      filter(housingunitgrp == input$unit_group)
+  })
   
   output$table <- renderDT({
-    d <- permit_22_23 %>% 
-      filter(housingunitgrp == input$unit_group) %>% 
+    d <- data() %>% 
       select(-geometry)
     
     datatable(d)
@@ -14,6 +17,9 @@ server <- function(input, output, session) {
   
   output$plot <- renderPlot({
     #input$unit_group
+    
+    ggplot(data(), aes(x=housingunitgrp, y=median_time_to_permit, fill=COMPOSITE_QUINTILE)) +
+      geom_bar(stat = 'identity', position='dodge')
     
     # # placeholder for chart
     # iris |> 
