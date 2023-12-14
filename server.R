@@ -4,7 +4,7 @@ server <- function(input, output, session) {
   #                  housing_unit_group = input$unit_group)
 
   data <- reactive({
-    permit_22_23 %>% 
+    permit_22_23_2 %>% 
       filter(housingunitgrp == input$unit_group)
   })
   
@@ -29,8 +29,9 @@ server <- function(input, output, session) {
   })
   
   output$map <- renderLeaflet({
-    
-    create_map(lyr = permit_22_23_map, 
+    m <- permit_22_23_map %>% 
+      filter(housingunitgrp == input$unit_group)
+    create_map(lyr = m, 
                lyr_data_field = rse_index$COMPOSITE_SCORE, 
                legend_title = 'Racial Social Equity Index', 
                legend_subtitle='Composite Index Value', 

@@ -24,4 +24,5 @@ permit_22_23_2<-permit_22_23 %>%
   mutate(housingunitgrp_fact=factor(housingunitgrp, levels=c('Single-Family','2-9 units', '10-20 units', 'More than 20 units')))%>%
   mutate(COMPOSITE_QUINTILE_fact=factor(COMPOSITE_QUINTILE, levels= c('Lowest', 'Second Lowest', 'Middle', 'Second Highest', 'Highest Equity Priority')))
 
-permit_22_23_map <- rse_index %>% full_join(permit_22_23_2, by="GEOID")
+permit_22_23_map <- rse_index %>% full_join(permit_22_23_2, by=c("GEOID","TRACT"))
+  
