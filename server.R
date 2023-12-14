@@ -18,8 +18,11 @@ server <- function(input, output, session) {
   output$plot <- renderPlot({
     #input$unit_group
     
-    ggplot(data(), aes(x=housingunitgrp, y=median_time_to_permit, fill=COMPOSITE_QUINTILE)) +
-      geom_bar(stat = 'identity', position='dodge')
+    # ggplot(data(), aes(x=housingunitgrp, y=median_time_to_permit, fill=COMPOSITE_QUINTILE)) +
+    #   geom_bar(stat = 'identity', position='dodge')
+    
+    ggplot(data(), aes(x=housingunitgrp_fact, y=median_time_to_permit, fill=COMPOSITE_QUINTILE_fact))+
+      geom_bar(stat='identity', position='dodge')
     
     # # placeholder for chart
     # iris |> 
