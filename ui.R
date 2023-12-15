@@ -7,7 +7,7 @@ permit_class_selection <- selectInput("unit_group",
                                      )
 
 ui <- fluidPage(
-  navbarPage("Housing Permits(2022-2023) by Equity Priority Area ",
+  navbarPage("Housing Permits(22-23) by Racial Social Equity",
              theme = bs_theme(base_font = font_google("Poppins")),
 
              windowTitle = "Seattle Open Data Hackathon",
