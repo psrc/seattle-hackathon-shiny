@@ -27,7 +27,8 @@ server <- function(input, output, session) {
       filter(housingunitgrp == input$unit_group)
     
     create_map(lyr = m, 
-               lyr_data_field = m$COMPOSITE_QUINTILE_fact, 
+               lyr_data_field = m$COMPOSITE_QUINTILE_fact,
+               n_data_field = m$n_permit_issued,
                legend_title = 'Racial Social Equity Group', 
                legend_subtitle='where permits granted', 
                psrc_col_pal = psrc_purples_plus)

@@ -1,6 +1,7 @@
 install_psrc_fonts()
 create_map <- function(lyr,
                        lyr_data_field,
+                       n_data_field,
                        legend_title,
                        legend_subtitle,
                        psrc_col_pal='psrc_purples',
@@ -20,7 +21,8 @@ create_map <- function(lyr,
   
   
   labels <-
-    paste0('Index: ', prettyNum(lyr_data_field, big.mark = ",")) %>%
+    paste0('Index: ', lyr_data_field,"</br>",
+           "N Permits: ", n_data_field) %>%
     lapply(htmltools::HTML)
   
   m <- leaflet::leaflet() %>%
