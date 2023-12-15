@@ -23,9 +23,7 @@ ui <- fluidPage(
                             column(width = 6,
                                    card(
                                      plotOutput('plot')
-                                     
                                    )
-                                   
                             ),
                             column(width = 6,
                                    card(
@@ -35,19 +33,13 @@ ui <- fluidPage(
                           ), # end fluidRow
                           fluidRow(
                             card(
-                            column(width = 9,
+                            column(width = 12,
                                    DTOutput('table')
                                    )
                             )
-                           
                           )
-                          
                         )
-                        
-
                       ) # end sidebarLayout
-
                       )#, # end tabPanel
-
   )
 )
