@@ -6,9 +6,12 @@ server <- function(input, output, session) {
   })
   
   output$table <- renderDT({
-    d <- data()
+    d <- data() %>% 
+      select(GEOID:median_time_to_permit)
     
-    datatable(d)
+    datatable(d,
+              colnames = c('GEOID', 'TRACT', 'Housing Unit Group', 'RSE Priority', 'Permits Issued', 'Median Permit Time')) %>% 
+      formatRound("median_time_to_permit", 0)
   })
   
   output$plot <- renderPlotly({
@@ -16,7 +19,7 @@ server <- function(input, output, session) {
 
     p<-ggplot(data(), aes(x=housingunitgrp_fact, y=median_time_to_permit, fill=COMPOSITE_QUINTILE_fact))+
       geom_bar(stat='identity', position='dodge') +
-      labs(x="Housing Unit Group", y="Median Time to Permit(days)") + 
+      labs(x="Housing Unit Group", y="Median Time to Permit (days)") + 
       scale_fill_manual(name = "Racial Social Equity Priority", values=psrc_purples_plus)
     ggplotly(p)
     
