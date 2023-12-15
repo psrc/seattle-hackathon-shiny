@@ -12,7 +12,7 @@ ui <- fluidPage(
 
              windowTitle = "Seattle Open Data Hackathon",
 
-             tabPanel("Building Permits",
+             tabPanel("The map shows tracts where units of that type were built, colored by the Racial Social Equity Index Value",
                       sidebarLayout(
                         sidebarPanel(permit_class_selection,
                                      source_ui('seattle'),

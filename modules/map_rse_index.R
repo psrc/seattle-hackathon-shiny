@@ -1,3 +1,4 @@
+install_psrc_fonts()
 create_map <- function(lyr,
                        lyr_data_field,
                        legend_title,

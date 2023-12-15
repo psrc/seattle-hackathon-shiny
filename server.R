@@ -12,11 +12,12 @@ server <- function(input, output, session) {
   })
   
   output$plot <- renderPlot({
+    psrc_purples_plus <- append(psrc_colors$purples_inc, c("#FFFFFF"), after=0)
 
     ggplot(data(), aes(x=housingunitgrp_fact, y=median_time_to_permit, fill=COMPOSITE_QUINTILE_fact))+
       geom_bar(stat='identity', position='dodge') +
-      labs(x="Housing Unit Group", y="Median Time to Permit") + 
-      scale_fill_discrete(name = "Composite RSE Index")
+      labs(x="Housing Unit Group", y="Median Time to Permit(days)") + 
+      scale_fill_manual(name = "Racial Social Equity Index", values=psrc_purples_plus)
     
   })
   
