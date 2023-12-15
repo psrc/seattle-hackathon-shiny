@@ -49,11 +49,13 @@ mainpanel_server <- function(id, housing_unit_group) {
     })
     
     output$map <- renderLeaflet({
+      d <- permit_22_23 %>% 
+        filter(housingunitgrp == input$unit_group)
       
-      create_map(lyr = rse_index, 
-                 lyr_data_field = rse_index$COMPOSITE_SCORE, 
+      create_map(lyr = d, 
+                 lyr_data_field = d$COMPOSITE_QUINTILE, 
                  legend_title = 'Racial Social Equity Index', 
-                 legend_subtitle='Composite Index Value', 
+                 legend_subtitle='Composite Quantile', 
                  psrc_col_pal = psrc_purples_plus)
       
       # # placeholder for map

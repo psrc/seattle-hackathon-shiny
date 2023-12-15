@@ -26,7 +26,7 @@ server <- function(input, output, session) {
       filter(housingunitgrp == input$unit_group)
     
     create_map(lyr = m, 
-               lyr_data_field = rse_index$COMPOSITE_SCORE, 
+               lyr_data_field = m$COMPOSITE_QUINTILE_fact, 
                legend_title = 'Racial Social Equity Index', 
                legend_subtitle='Composite Index Value', 
                psrc_col_pal = psrc_purples_plus)

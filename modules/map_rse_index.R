@@ -10,7 +10,7 @@ create_map <- function(lyr,
   # psrc colors need more contrast to work
   
   pal <-
-    leaflet::colorNumeric(palette = psrc_col_pal, domain = rse_index$COMPOSITE_SCORE)
+    leaflet::colorFactor(palette = psrc_col_pal, domain = lyr_data_field)
   
   css_fix <-
     "div.info.legend.leaflet-control br {clear: both;} html * {font-family: Poppins !important;}" # CSS to correct spacing and font family
@@ -215,9 +215,6 @@ addLegend_decreasing <-
   }
 
 
-lyr <- rse_index
-lyr_data_field <- rse_index$COMPOSITE_SCORE
-legend_title <- 'RSE Index'
-legend_subtitle <-'City of Seattle'
+
 psrc_purples_plus <- append(psrc_colors$purples_inc, c("#FFFFFF"), after=0)
 # m<-create_map(lyr=rse_index, lyr_data_field=rse_index$COMPOSITE_SCORE, legend_title='Racial Social Equity Index', legend_subtitle='Composite Index Value', psrc_col_pal=psrc_purples_plus)

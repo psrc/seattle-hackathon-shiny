@@ -7,7 +7,7 @@ permit_class_selection <- selectInput("unit_group",
                                      )
 
 ui <- fluidPage(
-  navbarPage("Seattle Open Data Hackathon",
+  navbarPage("Is Time to Permitting Equitable in Seattle?",
              theme = bs_theme(base_font = font_google("Poppins")),
 
              windowTitle = "Seattle Open Data Hackathon",
