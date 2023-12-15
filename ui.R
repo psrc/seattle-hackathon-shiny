@@ -9,7 +9,6 @@ permit_class_selection <- selectInput("unit_group",
 ui <- fluidPage(
   navbarPage("Seattle Open Data Hackathon",
              theme = bs_theme(base_font = font_google("Poppins")),
-             # useShinyjs(),
 
              windowTitle = "Seattle Open Data Hackathon",
 
@@ -18,7 +17,7 @@ ui <- fluidPage(
                         sidebarPanel(permit_class_selection,
                                      source_ui('seattle'),
                                      width = 3),
-                        # mainpanel_ui('dummy01')
+
                         mainPanel(
                           fluidRow(
                             column(width = 6,
@@ -35,9 +34,11 @@ ui <- fluidPage(
                             )
                           ), # end fluidRow
                           fluidRow(
-                            column(width = 12,
+                            card(
+                            column(width = 9,
                                    DTOutput('table')
                                    )
+                            )
                            
                           )
                           

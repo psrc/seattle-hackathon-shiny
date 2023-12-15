@@ -1,0 +1,10 @@
+name: seattle-hackaton
+title: Median time to Issued Permitting
+username: psrcwa
+account: psrcwa
+server: shinyapps.io
+hostUrl: https://api.shinyapps.io/v1
+appId: 10801866
+bundleId: 8050993
+url: https://psrcwa.shinyapps.io/seattle-hackaton/
+version: 1
