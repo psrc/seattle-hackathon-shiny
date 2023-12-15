@@ -7,7 +7,7 @@ permit_class_selection <- selectInput("unit_group",
                                      )
 
 ui <- fluidPage(
-  navbarPage("Housing Permits(22-23) by Racial Social Equity",
+  navbarPage("Housing Permit Time by Racial Social Equity",
              theme = bs_theme(base_font = font_google("Poppins")),
 
              windowTitle = "Seattle Open Data Hackathon",
@@ -16,16 +16,16 @@ ui <- fluidPage(
                       sidebarLayout(
                         sidebarPanel(permit_class_selection,
                                      source_ui('seattle'),
-                                     width = 3),
+                                     width = 4),
 
                         mainPanel(
                           fluidRow(
-                            column(width = 6,
+                            column(width = 10,
                                    card(
                                      plotOutput('plot')
                                    )
                             ),
-                            column(width = 6,
+                            column(width = 12,
                                    card(
                                      leafletOutput('map')
                                    )

@@ -7,6 +7,7 @@ library(echarts4r)
 library(psrcplot)
 library(DT)
 library(RSocrata)
+library(plotly)
 
 load(file = "seattle_bldgpmt_rse.rda")
 
