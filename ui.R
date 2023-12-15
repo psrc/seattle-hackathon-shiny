@@ -7,12 +7,12 @@ permit_class_selection <- selectInput("unit_group",
                                      )
 
 ui <- fluidPage(
-  navbarPage("Is Time to Permitting Equitable in Seattle?",
+  navbarPage("Housing Permits(22-23) by Equity Priority Area ",
              theme = bs_theme(base_font = font_google("Poppins")),
 
              windowTitle = "Seattle Open Data Hackathon",
 
-             tabPanel("The map shows tracts where units of that type were built, colored by the Racial Social Equity Index Value",
+             tabPanel("The map shows tracts where units of that type were permitted in 2022-23, colored by the Racial Social Equity Index Value",
                       sidebarLayout(
                         sidebarPanel(permit_class_selection,
                                      source_ui('seattle'),
