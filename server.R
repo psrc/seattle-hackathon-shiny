@@ -11,13 +11,14 @@ server <- function(input, output, session) {
     datatable(d)
   })
   
-  output$plot <- renderPlot({
+  output$plot <- renderPlotly({
     psrc_purples_plus <- append(psrc_colors$purples_inc, c("#FFFFFF"), after=0)
 
-    ggplot(data(), aes(x=housingunitgrp_fact, y=median_time_to_permit, fill=COMPOSITE_QUINTILE_fact))+
+    p<-ggplot(data(), aes(x=housingunitgrp_fact, y=median_time_to_permit, fill=COMPOSITE_QUINTILE_fact))+
       geom_bar(stat='identity', position='dodge') +
       labs(x="Housing Unit Group", y="Median Time to Permit(days)") + 
       scale_fill_manual(name = "Racial Social Equity Priority", values=psrc_purples_plus)
+    ggplotly(p)
     
   })
   

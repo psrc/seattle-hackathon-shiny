@@ -16,13 +16,13 @@ ui <- fluidPage(
                       sidebarLayout(
                         sidebarPanel(permit_class_selection,
                                      source_ui('seattle'),
-                                     width = 4),
+                                     width = 3),
 
                         mainPanel(
                           fluidRow(
-                            column(width = 10,
+                            column(width = 12,
                                    card(
-                                     plotOutput('plot')
+                                     plotlyOutput('plot')
                                    )
                             ),
                             column(width = 12,
